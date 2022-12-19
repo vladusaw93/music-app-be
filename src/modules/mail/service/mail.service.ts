@@ -13,7 +13,7 @@ export class MailService {
   async sendConfirmationEmail(user: User, token: string) {
     const url = `${this.config.get<string>(
       'FRONT_URL',
-    )}/auth/confirm?token=${token}`;
+    )}/auth/confirm/${token}`;
 
     await this.mailerService.sendMail({
       to: user.email,
