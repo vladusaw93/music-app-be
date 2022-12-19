@@ -10,6 +10,7 @@ import {TrackModule} from "./modules/track/track.module";
 import {FileModule} from "./modules/file/file.module";
 import {ServeStaticModule} from "@nestjs/serve-static";
 import {join} from "path";
+import {CommentModule} from "./modules/comment/coment.module";
 
 @Module({
     imports: [
@@ -28,7 +29,8 @@ import {join} from "path";
         MailModule,
         MorganModule,
         TrackModule,
-        FileModule
+        FileModule,
+        CommentModule
     ],
     providers: [{provide: APP_GUARD, useClass: AtGuard}],
 })
