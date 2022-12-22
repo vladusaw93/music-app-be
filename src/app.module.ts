@@ -9,8 +9,10 @@ import {MorganModule} from 'nest-morgan';
 import {TrackModule} from "./modules/track/track.module";
 import {FileModule} from "./modules/file/file.module";
 import {ServeStaticModule} from "@nestjs/serve-static";
-import {join} from "path";
 import {CommentModule} from "./modules/comment/coment.module";
+import {LikesModule} from "./modules/like/likes.module";
+
+import {join} from "path";
 
 @Module({
     imports: [
@@ -30,7 +32,8 @@ import {CommentModule} from "./modules/comment/coment.module";
         MorganModule,
         TrackModule,
         FileModule,
-        CommentModule
+        CommentModule,
+        LikesModule
     ],
     providers: [{provide: APP_GUARD, useClass: AtGuard}],
 })
